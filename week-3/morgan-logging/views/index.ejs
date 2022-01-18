@@ -1,0 +1,39 @@
+<!--
+============================================
+; Title: Exercise 3.2
+; Author: Professor Krasso
+; Date: 18 January 2022
+; Modified By: Joel Hartung
+; Description: Morgan Logging
+; Code Attribution: HTML Code adapted from Exercise 3.2
+; Code Attribution: CSS utilizes Bootstrap
+; URL: https://getbootstrap.com/
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Morgan Logger</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <br />
+            <h2><%= message %></h2>
+        </div>
+    </body>
+</html>
