@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: Exercise 3.2
+; Author: Professor Krasso
+; Date: 18 January 2022
+; Modified By: Joel Hartung
+; Code Attribution: Exercise 3.2 code taken from WEB 340 Blackboard course
+;===========================================
+*/
+
 var express = require("express");
 var http = require("http");
 var path = require("path");
