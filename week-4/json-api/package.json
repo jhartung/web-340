@@ -1,0 +1,8 @@
+{
+    "name": "exercise4.2",
+    "author": "Professor Krasso",
+    "private": true,
+    "dependencies": {
+        "express": "^4.17.2"
+    }
+}
