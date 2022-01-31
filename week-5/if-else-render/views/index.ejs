@@ -1,0 +1,12 @@
+<div role="main" class="container">
+    <br /><br />
+    <h2>Fruit List</h2>
+
+    <!-- if -->
+    <% if(fruits.length > 0) { %> <% for (var k = 0; k < fruits.length; k++) { %>
+    <div class="alert alert-success" role="alert"><strong><%=fruits[k] %></strong></div>
+    <% } %> <% } %>
+
+    <!-- // end if -->
+    <!-- end for loop -->
+</div>
