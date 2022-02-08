@@ -1,0 +1,11 @@
+{
+    "name": "exercise6.3",
+    "author": "Professor Krasso",
+    "private": true,
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "^4.17.2",
+        "mongoose": "^6.2.0",
+        "morgan": "^1.10.0"
+    }
+}
