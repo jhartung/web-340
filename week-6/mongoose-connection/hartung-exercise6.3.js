@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: Exercise 6.3
+; Author: Professor Krasso
+; Date: 2/8/2012
+; Modified By: Joel Hartung
+; Code Attribution: Exercise 6.3 code taken from WEB 340 Blackboard course
+;===========================================
+*/
+
 var express = require("express");
 var http = require("http");
 var logger = require("morgan");
