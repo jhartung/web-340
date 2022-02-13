@@ -5,37 +5,39 @@
 ; Date: 12 February 2022
 ; Modified By: Joel Hartung
 ; Description: index.ejs
-; Code Attribution: 
+; Code Attribution: Cards
+; URL: https://getbootstrap.com/docs/4.0/components/card/
+; Code Attribution: Additional code from WEB 340 Assignment documentation & WEB 340 Course Repository
 ;===========================================
 -->
 <%- include('header') -%>
 <%- include('navbar') -%>
-<div role="main" style="background: url(https://bootstrapious.com/i/snippets/sn-bg-image/bg.jpg); height: 100%" class="page-holder bg-cover">
+<div role="main" style="background: url('./static/images/scotland.jpg'); min-height: 80vh;" class="page-holder bg-cover">
     
     <div class="container">
         <div class="row">
-            <div class="card col-2 m-3" style="width: 18 rem; min-width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">List</h5>
-                <p class="card-text">Tabular view of employee records</p>
-                <a href="list" class="btn btn-primary" style="width: 10rem;">Let's go!</a>
+            <div class="card col-sm m-4" style="width: 18 rem; min-width: 18rem;">
+                <img class="card-img-top" style="width: 12rem; padding-top: 1rem; padding-bottom: 1rem; align-self: center;" src="/static/images/table-list-solid.svg" alt="Card image cap">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title mt-auto">List</h5>
+                    <p class="card-text mt-auto">Tabular view of employee records</p>
+                    <a href="list" class="btn btn-dark mt-auto" style="width: 10rem;">Let's go!</a>
                 </div>
             </div>
-            <div class="card col-2 m-3" style="width: 18rem; min-width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">New</h5>
-                <p class="card-text">Data Entry Page</p>
-                <a href="new" class="btn btn-primary" style="width: 10rem;">New record</a>
+            <div class="card col-sm m-4" style="width: 18 rem; min-width: 18rem;">
+                <img class="card-img-top" style="width: 12rem; padding-top: 1rem; padding-bottom: 1rem; align-self: center;" src="/static/images/database-solid.svg" alt="Card image cap">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title mt-auto">New</h5>
+                    <p class="card-text mt-auto">Data Entry Page</p>
+                    <a href="new" class="btn btn-dark mt-auto" style="width: 10rem;">New record</a>
                 </div>
             </div>
-            <div class="card col-2 m-3" style="width: 18rem; min-width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">View</h5>
-                <p class="card-text">Read-only page with selected employee's details</p>
-                <a href="list" class="btn btn-primary" style="width: 10rem;">View</a>
+            <div class="card col-sm m-4" style="width: 18 rem; min-width: 18rem;">
+                <img class="card-img-top"  style="width: 12rem; padding-top: 1rem; padding-bottom: 1rem; align-self: center;" src="/static/images/users-solid.svg" alt="Card image cap">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title mt-auto">View</h5>
+                    <p class="card-text mt-auto">Read-only page with selected employee's details</p>
+                    <a href="list" class="btn btn-dark mt-auto" style="width: 10rem;">View</a>
                 </div>
             </div>
         </div>

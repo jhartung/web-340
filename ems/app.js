@@ -5,10 +5,11 @@
 ; Date: 12 February 2022
 ; Modified By: Joel Hartung
 ; Description: app.js
-; Code Attribution: 
+; Code Attribution: Additional code from WEB 340 Assignment documentation & WEB 340 Course Repository
 ;===========================================
 */
 
+// adding all requirements
 var express = require("express");
 var http = require("http");
 var path = require("path");
@@ -18,6 +19,7 @@ var app = express();
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(logger("short"));
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 app.get("/", function (req, res) {
     res.render("index", {
