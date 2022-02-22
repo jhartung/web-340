@@ -13,11 +13,14 @@
 var express = require("express");
 var http = require("http");
 var path = require("path");
+var helmet = require("helmet");
 var logger = require("morgan");
 
 // database information
 var mongoose = require("mongoose");
 var mongoDB = "mongodb+srv://admin:!8$uffU5aw7pnZ,@buwebdev-cluster-1.gzdv5.mongodb.net/fms?retryWrites=true&w=majority";
+
+// initialize express
 var app = express();
 
 // imports the Employee model
@@ -26,13 +29,17 @@ var Employee = require('./models/employee');
 // sets the views and view engine
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
+
+// use statements
 app.use(logger("short"));
+app.use(helmet.xssFilter());
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
-// renders the appropriate pages when requested
+// http calls
 app.get("/", function (req, res) {
     res.render("index", {
         title: "Home page",
+        message: "XSS Prevention Example"
     });
 });
 
