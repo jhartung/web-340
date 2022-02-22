@@ -15,6 +15,12 @@ var http = require("http");
 var path = require("path");
 var helmet = require("helmet");
 var logger = require("morgan");
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var csrf = require("csurf");
+
+// set up csrf protection
+var csrfProtection = csrf({cookie: true});
 
 // database information
 var mongoose = require("mongoose");
@@ -32,16 +38,32 @@ app.set("view engine", "ejs");
 
 // use statements
 app.use(logger("short"));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(cookieParser());
+app.use(csrfProtection);
+app.use(function(req, res, next) {
+    var token = req.csrfToken();
+    res.cookie("XSRF-TOKEN", token);
+    res.locals.csrfToken = token;
+    next();
+})
 app.use(helmet.xssFilter());
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
-// http calls
+// routing
 app.get("/", function (req, res) {
     res.render("index", {
         title: "Home page",
         message: "XSS Prevention Example"
     });
 });
+
+app.post("/process", function(req, res) {
+    console.log(req.body.txtName);
+    res.redirect("/");
+})
 
 app.get("/list", function (req, res) {
     res.render("list", {
