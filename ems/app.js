@@ -61,13 +61,45 @@ app.get("/", function (req, res) {
 });
 
 app.post("/process", function(req, res) {
-    console.log(req.body.txtName);
+   // console.log(req.body.txtFirstName);
+    if (!req.body.txtFirstName) {
+        res.status(400).send("Entries must have a first name");
+        return;
+    }
+    if (!req.body.txtLastName) {
+        res.status(400).send("Entries must have a last name");
+        return;
+    }
+    // get the request's form data
+
+    var employeeFirstName = req.body.txtFirstName;
+    console.log(employeeFirstName);
+
+    var employeeLastName = req.body.txtLastName;
+    console.log(employeeLastName);
+
+    // create an employee model
+    var employee = new Employee({
+        firstName: employeeFirstName,
+        lastName: employeeLastName
+    });
+
+    //save
+    employee.save(function (error) {
+        if (error) throw error;
+        console.log(employeeFirstName + employeeLastName + " saved successfully!");
+    });
     res.redirect("/");
 })
 
 app.get("/list", function (req, res) {
+    Employee.find({}, function(error, employees) {
+        if (error) throw error;
+    
     res.render("list", {
-        title: "Tabular view of employee records",
+        title: "Employee list",
+        employees: employees
+        });
     });
 });
 

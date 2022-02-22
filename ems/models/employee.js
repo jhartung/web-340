@@ -14,10 +14,8 @@ const Schema = mongoose.Schema;
 
 // Employee Schema
 let employeeSchema = new Schema({
-  name: {
-    first: {type: String, required: true },
-    last: {type: String, required: true }
-  }
+  firstName: {type: String, required: true },
+  lastName: {type: String, required: true }
 });
 
 let Employee = mongoose.model("Employee", employeeSchema)
