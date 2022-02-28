@@ -109,10 +109,33 @@ app.get("/new", function (req, res) {
     });
 });
 
+/* 
 app.get("/view", function (req, res) {
     res.render("view", {
         title: "View selected employee details",
     });
+});
+*/
+
+app.get("/view/:queryName", function (req, res) {
+    var queryName = req.params['queryName'];
+    Employee.find({'firstName': queryName}, function(error, employees) {
+        if (error) {
+            console.log(error);
+            throw error;
+        } else {
+        console.log(employees);
+            if (employees.length > 0) {
+                res.render("view", {
+                    title: "Employee Record", 
+                    employee: employees
+                })
+            }
+            else {
+                res.redirect("/list")
+            }
+        }
+    })
 });
 
 //Mongoose connection information
