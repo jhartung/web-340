@@ -11,14 +11,25 @@
 -->
 <!-- Read-only page with the selected employee's details -->
 
+
+
+
 <%- include('header') -%>
 <%- include('navbar') -%>
-<div role="main" class="container" style="width: 30%; margin-top: 5%">
+<div role="main" class="container" style="width: 50%; margin-top: 5%">
     <div class="card">
-       
+        <br/><br/>
+        <h2>Employee Record</h2>
+            <div class="form-group">
+                <label for ="txtFirstName">First Name:</label>
+                <input type="text" class="form-control" id="txtFirstName" value="<%= employee[0].firstName %>" name="txtFirstName" />
+                <label for ="txtLastName">Last Name:</label>
+                <input type="text" class="form-control" id="txtLastName" value="<%= employee[0].lastName %>" name="txtLastName" />
+            </div>
+        <br /><br />     
     </div>
 
-    <a href="/">Return Home</a>
+    <a href="/list">Return to Employees</a>
 </div>
 
 <%- include('footer') -%>
