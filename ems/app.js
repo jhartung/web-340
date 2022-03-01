@@ -35,6 +35,7 @@ var Employee = require('./models/employee');
 // sets the views and view engine
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
+app.set("port", process.env.PORT || 8080);
 
 // use statements
 app.use(logger("short"));
@@ -149,6 +150,11 @@ db.once("open", function () {
 
 
 // Creates server on port 8080
+
+/*
 http.createServer(app).listen(8080, function () {
     console.log("Application started on port 8080!");
 });
+*/
+
+http:http.createServer(app).listen(app.get("port"), function() {console.log("Application started on port " + app.get("port"))});
